@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Article" representedClassName="Article" syncable="YES">
+        <attribute name="articleDate" optional="YES" attributeType="String"/>
+        <attribute name="articleTitle" optional="YES" attributeType="String"/>
+        <attribute name="articleUrl" optional="YES" attributeType="String"/>
+        <relationship name="pin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pin" inverseName="articles" inverseEntity="Pin"/>
+    </entity>
+    <entity name="Pin" representedClassName="Pin" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Article" inverseName="pin" inverseEntity="Article"/>
+    </entity>
+    <elements>
+        <element name="Pin" positionX="-48.86822509765625" positionY="-12.00607299804688" width="128" height="88"/>
+        <element name="Article" positionX="139.775634765625" positionY="-13.05239868164062" width="128" height="103"/>
+    </elements>
+</model>
